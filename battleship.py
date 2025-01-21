@@ -1,12 +1,4 @@
-from typing import List
-
-# on défini la position des bateaux
-aircraft_carrier = {(2, 2): True, (2, 3): True, (2, 4): True, (2, 5): True, (2, 6): True}
-cruiser = {(4, 1): True, (5, 1): True, (6, 1): True, (7, 1): True}
-destroyer = {(5, 3): True, (6, 3): True, (7, 3): True}
-submarine = {(5, 8): True, (5, 9): True, (5, 10): True}
-torpedo_boat = {(9, 5): True, (9, 6): True}
-ships_list = [aircraft_carrier, cruiser, destroyer, submarine, torpedo_boat]
+from typing import List, Dict, Tuple
 
 
 class Grid:
@@ -127,6 +119,14 @@ class Game:
         self.grid.display_grid()
         print("Bravo, tous les navires ont été coulés")
 
+
+# on défini la position des bateaux
+aircraft_carrier: Dict[Tuple[int, int], bool] = {(2, 2): True, (2, 3): True, (2, 4): True, (2, 5): True, (2, 6): True}
+cruiser: Dict[Tuple[int, int], bool] = {(4, 1): True, (5, 1): True, (6, 1): True, (7, 1): True}
+destroyer: Dict[Tuple[int, int], bool] = {(5, 3): True, (6, 3): True, (7, 3): True}
+submarine: Dict[Tuple[int, int], bool] = {(5, 8): True, (5, 9): True, (5, 10): True}
+torpedo_boat: Dict[Tuple[int, int], bool] = {(9, 5): True, (9, 6): True}
+ships_list: List[Dict[Tuple[int, int], bool]] = [aircraft_carrier, cruiser, destroyer, submarine, torpedo_boat]
 
 if __name__ == "__main__":
     game = Game()
